@@ -318,11 +318,6 @@ script:
 
             WINEPREFIX="$game_prefix" \
             winetricks -q $mo2_tricks $game_tricks
-            if [ "$?" != "0" ]; then
-                "$CACHE/utils/dialog.sh" errorbox \
-                    "Error while installing winetricks, please run Lutris from a terminal and check the logs"
-                exit 1
-            fi
 
             # workaround to stop installation if command fails
             echo "success" > '$CACHE/successful-prefix-preparation'
